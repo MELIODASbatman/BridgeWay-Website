@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Enrollment - Bridgeway</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="particles"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">BridgeWay</a>
+        <div class="nav-actions">
+          <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="enrollment.html" class="active">Enrollment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="enrollment-main">
+      <div class="enrollment-container">
+        <div class="enrollment-header">
+          <h1 class="enrollment-title">Course Enrollment</h1>
+          <p class="enrollment-subtitle">
+            Join Bridgeway and start your learning journey today
+          </p>
+        </div>
+
+        <!-- Enrollment Statistics Section -->
+        <div class="enrollment-stats-section">
+          <div class="stats-box">
+            <h2 class="stats-title">📊 Student Enrollment Dashboard</h2>
+
+            <!-- Enrollment Summary Paragraph -->
+            <div class="enrollment-summary">
+              <p id="enrollmentDisplay" class="enrollment-text">
+                Total Enrollments: <span id="totalEnrollments">0</span> students
+              </p>
+              <p class="enrollment-text">
+                <span id="enrollmentDetails"></span>
+              </p>
+            </div>
+
+            <!-- Enrollment Percentage Chart -->
+            <div class="chart-container">
+              <h3 class="chart-title">Enrollment Distribution (%)</h3>
+              <div id="enrollmentChart" class="chart"></div>
+            </div>
+
+            <!-- Animated Line Graph -->
+            <div class="chart-container line-chart-container">
+              <h3 class="chart-title">Enrollment Trend Over Time</h3>
+              <div class="line-chart-wrapper">
+                <canvas id="enrollmentLineChart" width="600" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Browser Section -->
+        <div class="course-browser-section">
+          <div class="browser-box">
+            <h2 class="browser-title">🔍 Browse Available Courses</h2>
+
+            <!-- Search Box -->
+            <div class="search-section">
+              <input
+                type="text"
+                id="courseBrowserSearch"
+                class="course-search-input"
+                placeholder="🔎 Search courses by name, duration, or price..."
+              />
+            </div>
+
+            <!-- Results Area -->
+            <div id="courseResultsArea" class="courses-results">
+              <!-- Courses will be displayed here using JavaScript -->
+            </div>
+          </div>
+        </div>
+
+        <div class="enrollment-content">
+          <!-- Enrollment Form -->
+          <div class="enrollment-form-wrapper">
+            <form class="enrollment-form" id="enrollmentForm" novalidate>
+              <div id="enrollmentFormMessage" class="form-message"></div>
+              <!-- Course Selection -->
+              <div class="form-section">
+                <h2 class="section-title">Select Your Course</h2>
+                <div class="form-group">
+                  <label for="course" class="form-label">Choose Course *</label>
+                  <select id="course" name="course" class="form-input" required>
+                    <option value="">-- Select a Course --</option>
+                    <option value="Certificate in Web Development">
+                      Certificate in Web Development (3 Months - KShs. 30,769)
+                    </option>
+                    <option value="Diploma in Microsoft Office">
+                      Diploma in Microsoft Office (2 Months - KShs. 14,800)
+                    </option>
+                    <option value="Certificate in Graphic Design">
+                      Certificate in Graphic Design (4 Months - KShs. 26,545)
+                    </option>
+                    <option value="Certificate in Computer Networking">
+                      Certificate in Computer Networking (5 Months - KShs.
+                      35,978)
+                    </option>
+                    <option value="Certificate in C++ Programming">
+                      Certificate in C++ Programming (4 Months - KShs. 28,500)
+                    </option>
+                    <option value="Diploma in C# Programming">
+                      Diploma in C# Programming (6 Months - KShs. 42,000)
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Personal Information -->
+              <div class="form-section" id="personal-info-section">
+                <h2 class="section-title">Personal Information</h2>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName" class="form-label"
+                      >First Name *</label
+                    >
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      class="form-input"
+                      placeholder="Enter your first name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName" class="form-label">Last Name *</label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      class="form-input"
+                      placeholder="Enter your last name"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="your.email@example.com"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="form-label">Phone Number *</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-input"
+                    placeholder="+254 700 000 000"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="education" class="form-label"
+                    >Education Level</label
+                  >
+                  <select id="education" name="education" class="form-input">
+                    <option value="">-- Select Education Level --</option>
+                    <option value="high-school">High School</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="bachelor">Bachelor's Degree</option>
+                    <option value="master">Master's Degree</option>
+                    <option value="phd">PhD</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Address Information -->
+              <div class="form-section">
+                <h2 class="section-title">Address Information</h2>
+
+                <div class="form-group">
+                  <label for="city" class="form-label">City *</label>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    class="form-input"
+                    placeholder="Enter your city"
+                    required
+                  />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="county" class="form-label">County *</label>
+                    <input
+                      type="text"
+                      id="county"
+                      name="county"
+                      class="form-input"
+                      placeholder="Enter your county"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="postalCode" class="form-label"
+                      >Postal Code</label
+                    >
+                    <input
+                      type="text"
+                      id="postalCode"
+                      name="postalCode"
+                      class="form-input"
+                      placeholder="00100"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment Method -->
+              <div class="form-section">
+                <h2 class="section-title">Payment Method</h2>
+
+                <div class="payment-methods">
+                  <div class="payment-option">
+                    <input
+                      type="radio"
+                      id="mpesa"
+                      name="payment"
+                      value="mpesa"
+                      checked
+                    />
+                    <label for="mpesa" class="payment-label">
+                      <span class="payment-icon">📱</span>
+                      M-Pesa
+                    </label>
+                  </div>
+
+                  <div class="payment-option">
+                    <input type="radio" id="bank" name="payment" value="bank" />
+                    <label for="bank" class="payment-label">
+                      <span class="payment-icon">🏦</span>
+                      Bank Transfer
+                    </label>
+                  </div>
+
+                  <div class="payment-option">
+                    <input type="radio" id="card" name="payment" value="card" />
+                    <label for="card" class="payment-label">
+                      <span class="payment-icon">💳</span>
+                      Credit Card
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="mpesaNumber" class="form-label"
+                    >M-Pesa Account Number *</label
+                  >
+                  <input
+                    type="text"
+                    id="mpesaNumber"
+                    name="mpesaNumber"
+                    class="form-input"
+                    placeholder="Enter M-Pesa registered phone number"
+                    required
+                  />
+                </div>
+              </div>
+
+               <!-- Document Upload Section -->
+               <div class="form-section">
+                 <h2 class="section-title">📄 Required Documents</h2>
+                 <p class="form-note-text">
+                   Please upload the following documents to complete your
+                   application:
+                 </p>
+
+                 <div class="documents-grid">
+                   <!-- Identification Card -->
+                   <div class="document-card">
+                     <div class="document-icon-box">
+                       <span class="document-icon-large">🆔</span>
+                     </div>
+                     <div class="document-info">
+                       <h3 class="document-title">ID Card / Passport</h3>
+                       <p class="document-desc">
+                         Upload a clear copy of your national ID card or
+                         passport page with photo
+                       </p>
+                     </div>
+                     <div class="file-input-wrapper">
+                       <input
+                         type="file"
+                         id="idCard"
+                         name="idCard"
+                         accept="image/*,.pdf"
+                         class="file-input"
+                       />
+                       <label for="idCard" class="file-input-label">
+                         <span class="file-input-icon">📁</span>
+                         <span class="file-input-text">Choose File</span>
+                         <span class="file-input-badge"
+                           >PDF, JPG, PNG (Max 5MB)</span
+                         >
+                       </label>
+                     </div>
+                     <div class="file-preview" id="idCardPreview"></div>
+                   </div>
+
+                   <!-- Birth Certificate -->
+                   <div class="document-card">
+                     <div class="document-icon-box">
+                       <span class="document-icon-large">👶</span>
+                     </div>
+                     <div class="document-info">
+                       <h3 class="document-title">Birth Certificate</h3>
+                       <p class="document-desc">
+                         Upload a scanned copy of your birth certificate
+                       </p>
+                     </div>
+                     <div class="file-input-wrapper">
+                       <input
+                         type="file"
+                         id="birthCert"
+                         name="birthCert"
+                         accept="image/*,.pdf"
+                         class="file-input"
+                       />
+                       <label for="birthCert" class="file-input-label">
+                         <span class="file-input-icon">📁</span>
+                         <span class="file-input-text">Choose File</span>
+                         <span class="file-input-badge"
+                           >PDF, JPG, PNG (Max 5MB)</span
+                         >
+                       </label>
+                     </div>
+                     <div class="file-preview" id="birthCertPreview"></div>
+                   </div>
+
+                   <!-- KCSE Results Certificate -->
+                   <div class="document-card">
+                     <div class="document-icon-box">
+                       <span class="document-icon-large">🎓</span>
+                     </div>
+                     <div class="document-info">
+                       <h3 class="document-title">KCSE Results Slip</h3>
+                       <p class="document-desc">
+                         Upload your KCSE exam results certificate or
+                         transcript
+                       </p>
+                     </div>
+                     <div class="file-input-wrapper">
+                       <input
+                         type="file"
+                         id="ksceResults"
+                         name="ksceResults"
+                         accept="image/*,.pdf"
+                         class="file-input"
+                       />
+                       <label for="ksceResults" class="file-input-label">
+                         <span class="file-input-icon">📁</span>
+                         <span class="file-input-text">Choose File</span>
+                         <span class="file-input-badge"
+                           >PDF, JPG, PNG (Max 5MB)</span
+                         >
+                       </label>
+                     </div>
+                     <div class="file-preview" id="ksceResultsPreview"></div>
+                   </div>
+                 </div>
+
+                 <p class="form-note-docs">
+                   ℹ️ All documents should be clear legible scans or photos. Accepted
+                   formats: PDF, JPG, PNG. Maximum file size: 5MB per file.
+                 </p>
+               </div>
+
+              <!-- Terms and Conditions -->
+              <div class="form-section">
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="terms" name="terms" required />
+                  <label for="terms" class="checkbox-label">
+                    I agree to the Terms and Conditions and Privacy Policy *
+                  </label>
+                  <button type="button" class="terms-link" id="termsLink">View Terms</button>
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="newsletter" name="newsletter" />
+                  <label for="newsletter" class="checkbox-label">
+                    Subscribe to our newsletter for updates and special offers
+                  </label>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-section">
+                <button type="submit" class="submit-btn">
+                  Complete Enrollment
+                </button>
+                <p class="form-note">✓ All fields marked with * are required</p>
+              </div>
+            </form>
+          </div>
+
+          <!-- Course Summary Sidebar -->
+          <div class="enrollment-sidebar">
+            <div class="course-summary">
+              <h3 class="summary-title">Course Summary</h3>
+              <div id="selectedCourseInfo" class="course-info">
+                <p class="info-text">Select a course to see details</p>
+              </div>
+
+              <div class="price-breakdown">
+                <h4>Price Breakdown</h4>
+                <div class="breakdown-item">
+                  <span>Tuition Fee:</span>
+                  <span id="tuitionFee">KShs. --</span>
+                </div>
+                <div class="breakdown-item">
+                  <span>Platform Fee:</span>
+                  <span>KShs. 500</span>
+                </div>
+                <div class="breakdown-item total">
+                  <span>Total Amount:</span>
+                  <span id="totalAmount">KShs. --</span>
+                </div>
+              </div>
+
+              <div class="benefits-box">
+                <h4>What You Get</h4>
+                <ul class="benefits-list">
+                  <li>✓ Lifetime Access to Course Materials</li>
+                  <li>✓ Expert Instructors & Mentors</li>
+                  <li>✓ Hands-on Projects & Assignments</li>
+                  <li>✓ Certificate of Completion</li>
+                  <li>✓ Career Support & Guidance</li>
+                  <li>✓ Community Forum Access</li>
+                </ul>
+              </div>
+
+              <div class="info-box">
+                <h4>Need Help?</h4>
+                <p>Contact our support team:</p>
+                <p class="contact-email">
+                  <strong>Email:</strong> support@bridgeway.com
+                </p>
+                <p class="contact-phone">
+                  <strong>Phone:</strong> +254 700 000 000
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal-backdrop" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsModalTitle" hidden>
+      <div class="modal-card">
+        <button type="button" class="modal-close" id="termsModalClose" aria-label="Close terms">×</button>
+        <h2 id="termsModalTitle">Terms and Conditions</h2>
+        <div class="modal-content">
+          <p><strong>Eligibility:</strong> Applicants must provide accurate personal details and meet course requirements before enrollment is confirmed.</p>
+          <p><strong>Payment:</strong> Fees are shown in Kenya Shillings and must be paid through the selected payment method before admission is finalized.</p>
+          <p><strong>Privacy:</strong> Your submitted information is stored locally in this browser for this demo site and should not be treated as an official government or bank record.</p>
+          <p><strong>Conduct:</strong> Students must follow BridgeWay learning rules, respect staff and classmates, and use course resources responsibly.</p>
+          <p><strong>Cancellations:</strong> Contact admissions before the course start date if you need to change or cancel your enrollment request.</p>
+        </div>
+        <button type="button" class="btn btn-primary modal-accept" id="termsModalAccept">I Understand</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Bridgeway</h3>
+            <p>
+              We provide quality education and training in technology, design,
+              and business skills to help you advance your career.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="enrollment.html">Enrollment</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>Email: info@bridgeway.com</p>
+            <p>Phone: +254 700 000 000</p>
+            <p>Address: Nairobi, Kenya</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 Bridgeway Institute of Technology. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

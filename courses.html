@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Courses - Bridgeway</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="particles"></div>
+<!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">BridgeWay</a>
+        <div class="nav-actions">
+          <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html" class="active">Courses</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="enrollment.html">Enrollment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="courses-main">
+      <div class="courses-container">
+        <h1 class="courses-title">OUR COURSES</h1>
+        <!-- Search Bar -->
+        <div class="search-container">
+          <input
+            type="text"
+            id="courseSearch"
+            class="search-bar"
+            placeholder=" Search courses by name, duration, or price..."
+          />
+        </div>
+
+        <!-- Courses Cards -->
+        <div class="courses-grid">
+          <!-- Certificate in Web Development Card -->
+          <div class="course-card" data-course="Certificate in Web Development">
+            <div class="card-header">
+              <h2 class="card-title">Certificate in Web Development</h2>
+            </div>
+            <div class="card-body">
+              <p class="card-description">
+                Master the skills to build responsive, interactive websites
+                using HTML, CSS, JavaScript, and modern web frameworks. Learn
+                front-end and back-end development to create complete web
+                applications.
+              </p>
+                <div class="card-details">
+                  <div class="detail-item">
+                    <span class="detail-label">Duration:</span>
+                    <span class="detail-value">3 Months</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Price:</span>
+                    <span class="detail-price">KShs. 30,769</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Enrollments:</span>
+                    <span class="detail-value" id="course-enroll-count-1">0</span>
+                  </div>
+                </div>
+            </div>
+            <button class="card-btn">Enroll Now</button>
+          </div>
+
+          <!-- Diploma in Microsoft Office Card -->
+          <div class="course-card" data-course="Diploma in Microsoft Office">
+            <div class="card-header">
+              <h2 class="card-title">Diploma in Microsoft Office</h2>
+            </div>
+            <div class="card-body">
+              <p class="card-description">
+                Become proficient in Microsoft Word, Excel, PowerPoint, and
+                Access. Learn advanced techniques for document creation, data
+                analysis, presentations, and database management to excel in
+                office environments.
+              </p>
+                <div class="card-details">
+                  <div class="detail-item">
+                    <span class="detail-label">Duration:</span>
+                    <span class="detail-value">2 Months</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Price:</span>
+                    <span class="detail-price">KShs. 14,800</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Enrollments:</span>
+                    <span class="detail-value" id="course-enroll-count-2">0</span>
+                  </div>
+                </div>
+            </div>
+            <button class="card-btn">Enroll Now</button>
+          </div>
+
+          <!-- Certificate in Graphic Design Card -->
+          <div class="course-card" data-course="Certificate in Graphic Design">
+            <div class="card-header">
+              <h2 class="card-title">Certificate in Graphic Design</h2>
+            </div>
+            <div class="card-body">
+              <p class="card-description">
+                Unleash your creativity with industry-standard design tools.
+                Learn visual design principles, branding, UI/UX design, and
+                digital illustration to create stunning graphics and marketing
+                materials.
+              </p>
+                <div class="card-details">
+                  <div class="detail-item">
+                    <span class="detail-label">Duration:</span>
+                    <span class="detail-value">4 Months</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Price:</span>
+                    <span class="detail-price">KShs. 26,545</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">Enrollments:</span>
+                    <span class="detail-value" id="course-enroll-count-3">0</span>
+                  </div>
+                </div>
+            </div>
+            <button class="card-btn">Enroll Now</button>
+          </div>
+
+          <!-- Certificate in Computer Networking Card -->
+          <div
+            class="course-card"
+            data-course="Certificate in Computer Networking"
+          >
+            <div class="card-header">
+              <h2 class="card-title">Certificate in Computer Networking</h2>
+            </div>
+            <div class="card-body">
+              <p class="card-description">
+                Understand network infrastructure, protocols, and security.
+                Learn to configure routers, switches, and firewalls, plus gain
+                practical knowledge in network troubleshooting and management.
+              </p>
+              <div class="card-details">
+                <div class="detail-item">
+                  <span class="detail-label">Duration:</span>
+                  <span class="detail-value">5 Months</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Price:</span>
+                  <span class="detail-price">KShs. 35,978</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Enrollments:</span>
+                  <span class="detail-value" id="course-enroll-count-4">0</span>
+                </div>
+              </div>
+            </div>
+<button class="card-btn">Enroll Now</button>
+           </div>
+
+           <!-- Certificate in C++ Programming Card -->
+           <div class="course-card" data-course="Certificate in C++ Programming">
+             <div class="card-header">
+               <h2 class="card-title">Certificate in C++ Programming</h2>
+             </div>
+             <div class="card-body">
+               <p class="card-description">
+                 Learn C++ fundamentals, object-oriented programming, data structures,
+                 and algorithms to build efficient applications. Perfect for those
+                 interested in system programming and game development.
+               </p>
+                 <div class="card-details">
+                   <div class="detail-item">
+                     <span class="detail-label">Duration:</span>
+                     <span class="detail-value">4 Months</span>
+                   </div>
+                   <div class="detail-item">
+                     <span class="detail-label">Price:</span>
+                     <span class="detail-price">KShs. 28,500</span>
+                   </div>
+                   <div class="detail-item">
+                     <span class="detail-label">Enrollments:</span>
+                     <span class="detail-value" id="course-enroll-count-5">0</span>
+                   </div>
+                 </div>
+             </div>
+             <button class="card-btn">Enroll Now</button>
+           </div>
+
+           <!-- Diploma in C# Programming Card -->
+           <div class="course-card" data-course="Diploma in C# Programming">
+             <div class="card-header">
+               <h2 class="card-title">Diploma in C# Programming</h2>
+             </div>
+             <div class="card-body">
+               <p class="card-description">
+                 Master C# development with .NET framework, building Windows
+                 applications, web services, and enterprise solutions. Ideal for
+                 aspiring software developers.
+               </p>
+                 <div class="card-details">
+                   <div class="detail-item">
+                     <span class="detail-label">Duration:</span>
+                     <span class="detail-value">6 Months</span>
+                   </div>
+                   <div class="detail-item">
+                     <span class="detail-label">Price:</span>
+                     <span class="detail-price">KShs. 42,000</span>
+                   </div>
+                   <div class="detail-item">
+                     <span class="detail-label">Enrollments:</span>
+                     <span class="detail-value" id="course-enroll-count-6">0</span>
+                   </div>
+                 </div>
+             </div>
+             <button class="card-btn">Enroll Now</button>
+           </div>
+         </div>
+
+        <div id="noResults" class="no-results" style="display: none">
+          <p>
+            No courses found matching your search. Please try different
+            keywords.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Bridgeway</h3>
+            <p>
+              We provide quality education and training in technology, design,
+              and business skills to help you advance your career.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="about.html">About Us</a></li>
+          <li><a href="enrollment.html">Enrollment</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>Email: info@bridgeway.com</p>
+            <p>Phone: +254 700 000 000</p>
+            <p>Address: Nairobi, Kenya</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Bridgeway Institute of Technology. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
